@@ -1,0 +1,326 @@
+@import "tailwindcss";
+
+/* ============ 浅色大厂风格主题变量 ============ */
+:root {
+  --bg-primary: #f5f7fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f0f4f8;
+  --bg-hover: #e8eef4;
+  --border-color: #e2e8f0;
+  --border-light: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --accent-blue: #3b82f6;
+  --accent-blue-light: #eff6ff;
+  --accent-blue-hover: #2563eb;
+  --accent-blue-bg: #dbeafe;
+  --user-bubble: #3b82f6;
+  --user-bubble-text: #ffffff;
+  --ai-bubble: #ffffff;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 自定义滚动条样式 - 浅色风格 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* 全局样式 */
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 语音播放器样式 */
+.voice-player {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+  border-radius: 16px;
+  border: 1px solid #bfdbfe;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.voice-player:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #93c5fd;
+  transform: translateY(-1px);
+}
+
+.voice-player .play-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.35);
+}
+
+.voice-player:hover .play-btn {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.45);
+}
+
+.voice-player .play-btn.playing {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+}
+
+.voice-player .waveform {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 32px;
+}
+
+.voice-player .waveform .bar {
+  width: 3px;
+  background: linear-gradient(to top, #93c5fd, #3b82f6);
+  border-radius: 2px;
+  animation: wave-idle 1.2s ease-in-out infinite;
+}
+
+.voice-player .waveform .bar:nth-child(1) { animation-delay: 0s; height: 30%; }
+.voice-player .waveform .bar:nth-child(2) { animation-delay: 0.1s; height: 55%; }
+.voice-player .waveform .bar:nth-child(3) { animation-delay: 0.2s; height: 80%; }
+.voice-player .waveform .bar:nth-child(4) { animation-delay: 0.3s; height: 45%; }
+.voice-player .waveform .bar:nth-child(5) { animation-delay: 0.15s; height: 70%; }
+.voice-player .waveform .bar:nth-child(6) { animation-delay: 0.25s; height: 40%; }
+.voice-player .waveform .bar:nth-child(7) { animation-delay: 0.05s; height: 65%; }
+.voice-player .waveform .bar:nth-child(8) { animation-delay: 0.2s; height: 35%; }
+.voice-player .waveform .bar:nth-child(9) { animation-delay: 0.12s; height: 50%; }
+.voice-player .waveform .bar:nth-child(10) { animation-delay: 0.18s; height: 75%; }
+.voice-player .waveform .bar:nth-child(11) { animation-delay: 0.08s; height: 42%; }
+.voice-player .waveform .bar:nth-child(12) { animation-delay: 0.22s; height: 58%; }
+
+.voice-player.playing .waveform .bar {
+  animation: wave-active 0.5s ease-in-out infinite;
+}
+
+@keyframes wave-idle {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes wave-active {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+
+.voice-player .voice-hint {
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* 文本展开区域 */
+.text-reveal-area {
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s ease,
+    margin-top 0.3s ease;
+}
+
+.text-reveal-area.collapsed {
+  max-height: 0 !important;
+  opacity: 0;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  overflow: hidden;
+}
+
+.text-reveal-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--accent-blue);
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.2s;
+  user-select: none;
+}
+
+.text-reveal-toggle:hover {
+  color: var(--accent-blue-hover);
+}
+
+/* ============ 输入框增强样式 ============ */
+
+/* 自定义 text-slate-350 颜色（Tailwind 没有这个值） */
+.text-slate-350 {
+  color: #a0aab8;
+}
+
+/* 键盘快捷键 kbd 样式 */
+kbd {
+  font-family: inherit;
+}
+
+/* 输入框 placeholder 优化 */
+textarea::placeholder {
+  color: #cbd5e1;
+}
+
+/* 输入框聚焦时的光标动画 */
+@keyframes input-focus-ring {
+  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+  100% { box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.06); }
+}
+
+/* 发送按钮微动效 */
+button[class*="rounded-xl"]:active:not(:disabled) {
+  transform: scale(0.93);
+}
+
+/* ============ AI 加载动画样式 ============ */
+
+.ai-loading-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f0fdf4 100%);
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  animation: loading-fade-in 0.3s ease-out;
+}
+
+.ai-loading-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.15);
+}
+
+.ai-loading-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ai-loading-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ai-loading-dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+  animation: loading-dot-bounce 1.2s ease-in-out infinite;
+}
+
+@keyframes loading-dot-bounce {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.ai-loading-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  animation: loading-text-pulse 2s ease-in-out infinite;
+}
+
+@keyframes loading-text-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes loading-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============ 反方语音播放器样式 ============ */
+
+/* 反方语音条 - 红色主题 */
+.voice-player.con-theme {
+  background: linear-gradient(135deg, #fef2f2 0%, #fff 100%);
+  border-color: #fecaca;
+}
+
+.voice-player.con-theme:hover {
+  border-color: #fca5a5;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+}
+
+.voice-player.con-theme .play-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.35);
+}
+
+.voice-player.con-theme:hover .play-btn {
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.45);
+}
+
+.voice-player.con-theme .waveform .bar {
+  background: linear-gradient(to top, #fca5a5, #dc2626);
+}
+
+/* 波形动画 - 活跃状态 */
+@keyframes wave-active {
+  0%, 100% { transform: scaleY(0.3); opacity: 0.7; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+.animate-wave {
+  animation: wave-active 0.5s ease-in-out infinite;
+}
