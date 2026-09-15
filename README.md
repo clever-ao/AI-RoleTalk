@@ -99,7 +99,7 @@
 
 ### 🥳 项目开发彩蛋
 
-![[docs\\images\\problem.png]]
+<img src="docs\\images\\problem.png"/>
 
 ---
 
@@ -108,28 +108,28 @@
 ### 辩论模式
 
 选择模型
-![[docs\\images\\role_choice.png]]
+<img src="docs\\images\\role_choice.png"/>
 
 辩题设立
-![[docs\\images\\debate.png]]
+<img src="docs\\images\\debate.png"/>
 
 辩论细节
-![[docs\\images\\pre1.png]]
-![[docs\\images\\pre2.png]]
-![[docs\\images\\pre3.png]]
+<img src="docs\\images\\pre1.png"/>
+<img src="docs\\images\\pre2.png"/>
+<img src="docs\\images\\pre3.png"/>
 
 ### 夸夸模式
 
-![[docs\\images\\kwkw.png]]
+<img src="docs\\images\\kwkw.png"/>
 
 演示效果
-![[docs\\images\\pre_kwkw.png]]
+<img src="docs\\images\\pre_kwkw.png"/>
 
 ### 骂骂模式
 
-![[docs\\images\\mama.png]]
+<img src="docs\\images\\mama.png"/>
 演示截图
-![[docs\\images\\pre_mama.png]]
+<img src="docs\\images\\pre_mama.png"/>
 
 ---
 
