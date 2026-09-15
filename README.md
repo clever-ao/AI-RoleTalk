@@ -19,7 +19,7 @@
 ## 🌟 项目简介
 
 这是一个基于 **DeepSeek V4 Flash** 大模型与 **TTS 语音合成** 技术构建的多智能体（Multi-Agent）对话应用。它打破了传统 AI 单一问答的局限，允许用户自定义多个 AI 角色，并让它们在同一场景下进行**多轮、有立场、有情感**的交互
-![[docs\\images\\current.png]]
+<img src="docs\\images\\current.png"/>
 
 ### ✨ 核心特性
 
@@ -153,8 +153,8 @@
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/your-username/ai-debate-simulator.git
-cd ai-debate-simulator/chat-app
+git clone https://github.com/clever-ao/AI-RoleTalk.git
+cd chat-app
 ```
 
 ### 2. 启动后端
@@ -302,7 +302,7 @@ chat-app/
 
 ```bash
 # Fork 并克隆项目
-git clone https://github.com/your-username/ai-debate-simulator.git
+git clone https://github.com/clever-ao/AI-RoleTalk.git
 
 # 创建功能分支
 git checkout -b feature/your-feature-name
