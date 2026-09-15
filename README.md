@@ -19,7 +19,7 @@
 ## 🌟 项目简介
 
 这是一个基于 **DeepSeek V4 Flash** 大模型与 **TTS 语音合成** 技术构建的多智能体（Multi-Agent）对话应用。它打破了传统 AI 单一问答的局限，允许用户自定义多个 AI 角色，并让它们在同一场景下进行**多轮、有立场、有情感**的交互
-![[docs\images\current.png]]
+![[docs\\images\\current.png]]
 
 ### ✨ 核心特性
 
@@ -99,7 +99,7 @@
 
 ### 🥳 项目开发彩蛋
 
-![[docs\images\problem.png]]
+![[docs\\images\\problem.png]]
 
 ---
 
@@ -108,28 +108,28 @@
 ### 辩论模式
 
 选择模型
-![[docs\images\role_choice.png]]
+![[docs\\images\\role_choice.png]]
 
 辩题设立
-![[docs\images\debate.png]]
+![[docs\\images\\debate.png]]
 
 辩论细节
-![[docs\images\pre1.png]]
-![[docs\images\pre2.png]]
-![[docs\images\pre3.png]]
+![[docs\\images\\pre1.png]]
+![[docs\\images\\pre2.png]]
+![[docs\\images\\pre3.png]]
 
 ### 夸夸模式
 
-![[docs\images\kwkw.png]]
+![[docs\\images\\kwkw.png]]
 
 演示效果
-![[docs\images\pre_kwkw.png]]
+![[docs\\images\\pre_kwkw.png]]
 
 ### 骂骂模式
 
-![[docs\images\mama.png]]
+![[docs\\images\\mama.png]]
 演示截图
-![[docs\images\pre_mama.png]]
+![[docs\\images\\pre_mama.png]]
 
 ---
 
