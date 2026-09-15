@@ -108,14 +108,19 @@
 ### 辩论模式
 
 选择模型
+
 <img src="docs\\images\\role_choice.png"/>
 
 辩题设立
+
 <img src="docs\\images\\debate.png"/>
 
 辩论细节
+
 <img src="docs\\images\\pre1.png"/>
+
 <img src="docs\\images\\pre2.png"/>
+
 <img src="docs\\images\\pre3.png"/>
 
 ### 夸夸模式
@@ -123,12 +128,15 @@
 <img src="docs\\images\\kwkw.png"/>
 
 演示效果
+
 <img src="docs\\images\\pre_kwkw.png"/>
 
 ### 骂骂模式
 
 <img src="docs\\images\\mama.png"/>
+
 演示截图
+
 <img src="docs\\images\\pre_mama.png"/>
 
 ---
